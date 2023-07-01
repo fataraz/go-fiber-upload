@@ -26,7 +26,7 @@ func main() {
 
 	app.Post("/upload", func(c *fiber.Ctx) error {
 		var input struct {
-			Nama_gambar string
+			NamaGambar string
 		}
 
 		if err := c.BodyParser(&input); err != nil {
@@ -80,7 +80,7 @@ func main() {
 		}
 
 		return c.Status(500).JSON(fiber.Map{
-			"title":       input.Nama_gambar,
+			"title":       input.NamaGambar,
 			"nama_gambar": nameFileBaru,
 			"message":     "Gambar berhasil diupload",
 		})
